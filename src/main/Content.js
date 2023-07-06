@@ -9,7 +9,7 @@ const Content = () => {
     return (
         <div className="home">
             <Switch>
-            <Route exact path='/'>
+            <Route exact path='/steven'>
               <AboutMe />
             </Route>
             <Route path='/aboutme'>
