@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  min-height: 100vh;
+  --nav-load-time:300ms;
+  height: 100%;
+  background-color: #0d1b2a;
+  color: #e0e1dd;
 }
 
 .App-logo {
@@ -35,4 +41,387 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 30px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.navbar h1 {
+  font-size: 25px;
+  margin: 0;
+  margin-left: 30px;
+  color: #fff;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 100px;
+}
+
+.navbar ul a:hover {
+  color: #0d1b2a;
+  text-decoration: underline;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  margin-top: 15px;
+  margin-right: 20px;
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+
+.menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+@media (max-width: 960px){
+  .navbar .menu {
+    display: flex;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: start;
+    background-color: #415a77;
+  }
+
+  nav ul.open {
+    display: flex;
+    padding-left: 0px;
+  }  
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+  .navbar ul a {
+    width: 100%;
+    text-align: center;
+    margin: 0.2rem 0.5rem;
+    color: #fff;
+  }
+}
+
+.box{
+  height: 10000px;
+  width: 100%;
+  background-color: #9bf858;
+  z-index: 500;
+  position: absolute;
+  animation: box-load 2500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes box-load {
+  0%{
+    transform: translateY(0);
+  }
+
+  100%{
+    transform: translateY(-100%);
+  }
+}
+
+.welcomeh1{
+  text-align: center;
+  margin-left: 50%;
+  margin-top: 600px;
+  /* margin: 600px auto; */
+  position: absolute;
+  z-index: 505;
+  animation: box-h1 1800ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes box-h1 {
+  0%{
+    transform:scale(0)
+  }
+
+  50%{
+    transform: scale(1.1);
+  }
+  90%{
+    transform: scale(1);
+  }
+
+  100%{
+    transform: scale(0);
+  }
+}
+
+.footer {
+  background-color: #778da9;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer-content {
+  margin-top: 20px;
+}
+.footer p {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  display: inline-block;
+}
+
+.footer-links li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar ul a.active {
+  font-weight: bold;
+}
+
+/* CSS for AboutMe component */
+.about-me {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.about-me h1 {
+  font-size: 40px;
+  font-weight: bold;
+  /* transform: scale(0); */
+  z-index: 1;
+  margin-bottom: 10px;
+  animation: about-me-h1 200ms ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2600ms;
+}
+
+@keyframes about-me-h1 {
+  0%{
+    transform: rotate(15deg);
+  }
+  50%{
+    transform: rotate(-15deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+.about-me p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.about-me p:last-child {
+  margin-bottom: 0;
+}
+
+.info{
+  padding: 80px;
+}
+.resume {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 600px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #52657d
+}
+
+.resume h1 {
+  font-size: 40px;
+  font-weight: bold;
+
+  margin-bottom: 90px;
+}
+
+.resume button {
+  padding: 10px 20px;
+  background-color: #52657d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px 0px;
+}
+
+
+
+.resume button:hover {
+  background-color: #b2b2b2;
+}
+
+.resume h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.resume ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.resume li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.project-card {
+  border: none;
+  padding: 10px;
+  margin: 80px 0px;
+}
+
+.project-card h1 {
+  margin-top: 0;
+}
+
+.project-card img {
+  max-width: 50%;
+  height: auto;
+  margin: 40px 0px;
+}
+
+.project-card p {
+  margin-bottom: 10px;
+  /* padding-left: 50px;
+  padding-right: 50px; */
+  padding: 0px 150px;
+  margin-top: 20px;
+}
+
+.project-links  {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #e0e1dd;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #78ff67;
+  font-size: 20px;
+}
+
+
+.project-links a:last-child {
+  margin-right: 0;
+}
+
+.about-me img {
+  margin-top: 50px;
+}
+
+.portfolio h1{
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.contact-main {
+  margin-bottom: 550px;
+}
+
+.contact-main h1{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 70px auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submit-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
